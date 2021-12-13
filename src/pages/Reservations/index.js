@@ -4,8 +4,8 @@ import { createDrawerNavigator } from '@react-navigation/drawer';
 import { NavigationContainer } from '@react-navigation/native';
 
 import Login from '../Login';
-
 import Reserva from '../../components/Reserva';
+import Ambiente from '../../components/Ambiente';
 
 function Reservas({ navigation }) {
     return (
@@ -29,9 +29,25 @@ function Reservas({ navigation }) {
     );
   }
 
-  function teste(){
+  function Ambientes({ navigation }){
     return(
-      <Login/>
+      <View style={styles.background2}>
+      <Button
+        onPress={Reservas}
+        title="+ Add new evironment"
+        color="#77af88"
+        accessibilityLabel="+ Add new evironment"
+
+      />      
+        <ScrollView>
+          <Ambiente/>
+          <Ambiente/>
+          <Ambiente/>
+          <Ambiente/>
+          <Ambiente/>
+        </ScrollView>      
+      </View>
+      
     )
   }
 
@@ -41,8 +57,9 @@ function Reservas({ navigation }) {
     return (
       <NavigationContainer>
         <Drawer.Navigator initialRouteName="Reservas">
-          <Drawer.Screen name="Reservas" component={Reservas} />
-          <Drawer.Screen name="Teste" component={teste} />
+          <Drawer.Screen name="Reservations" component={Reservas} />
+          <Drawer.Screen name="Registred Evironments" component={Ambientes} />
+{/*          <Drawer.Screen name="Teste" component={teste} />*/}
         </Drawer.Navigator>
       </NavigationContainer>
     );
@@ -55,4 +72,16 @@ function Reservas({ navigation }) {
       alignItems: 'center',
       justifyContent: 'center',
     },
+    background2:{
+      backgroundColor: '#5e8d69',
+      alignItems: 'center',
+      justifyContent: 'center',
+    },
+    teste:{
+      backgroundColor:'#5e8d69',
+      color: '#5e8d69',
+      flex:1,
+      justifyContent:'center',
+      alignItems:'center'
+    }
 })

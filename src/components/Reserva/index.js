@@ -21,8 +21,6 @@ export default function Reserva() {
     )
 }
 
-
-
 export const styles = StyleSheet.create({
     global:{
         marginTop: 30,
